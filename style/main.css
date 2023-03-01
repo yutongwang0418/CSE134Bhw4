@@ -1,0 +1,129 @@
+:root {
+    --main-bg-color: rgb(0, 217, 255);
+}
+
+* {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+}
+  
+a {
+    flex: 1;
+    background-color: #333333;
+    color: #fff;
+    border: 1px solid;
+    padding: 0.3rem;
+    text-align: center;
+    text-decoration: none;
+
+    transition: all 0.5s ease-out;
+}
+  
+a:hover,a:focus {
+    background-color: #fff;
+    color: #333;
+}
+
+
+header {
+    background-color: var(--main-bg-color);
+    padding: 2rem;
+    grid-column: 1/4;
+    text-align: center;
+    color: #f0181f;
+
+    font-family: serif;
+}
+
+body {
+    padding: 20px;
+
+    grid-column: 1/2;
+
+    background-color: #aeea18;
+}
+
+main {
+    text-align: center;
+}
+
+footer {
+    padding: 2rem;
+    grid-column: 1/4;
+    text-align: center;
+    
+    font-family: cursive;
+}
+
+
+
+time {
+    font-style: italic;
+}
+
+p, em, table {
+    animation-duration: 1.5s;
+    animation-name: load1;
+}
+
+.img {
+    animation-duration: 1.5s;
+    animation-name: load2;
+}
+  
+@keyframes load1 {
+    from {
+        margin-left: 20%;
+        width: 200%;
+    }
+  
+    75% {
+      font-size: 200%;
+      margin-left: 10%;
+      width: 150%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+@keyframes load2 {
+    from {
+        margin-left: 20%;
+        width: 200%;
+        transform: rotate(0.25turn);
+    }
+  
+    25% {
+      font-size: 150%;
+      margin-left: 10%;
+      width: 150%;
+      transform: rotate(0.25turn);
+    }
+
+    50% {
+        font-size: 200%;
+        margin-left: 10%;
+        width: 150%;
+        transform: rotate(0.25turn);
+    }
+
+    75% {
+        font-size: 150%;
+        margin-left: 10%;
+        width: 150%;
+        transform: rotate(0.25turn);
+      }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}

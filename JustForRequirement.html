@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+	    <meta name="description" content="Personal Portfolio" />
+	    <meta name="keywords" content="HTML, CSS, JavaScript" />
+	    <meta name="author" content="Yutong Wang" />
+        <link rel="stylesheet" href="style/main.css">
+        <title> John Wang </title>
+    </head>
+
+    <body>
+        <header>
+            <h1>JustForRequirement</h1>
+            <nav class="welcome">
+                <a href="index.html">&nbsp;Home&nbsp;</a>
+                <a href="about_me.html">&nbsp;About me&nbsp;</a>
+                <a href="personal_experience.html">&nbsp;Personal experience&nbsp;</a>
+                <a href="daily_life.html">&nbsp;Daily life&nbsp;</a>
+            </nav>
+
+
+        </header>
+        <main>
+            <h2>The implement of some tags which cannot add to normal sites</h2>
+            <section class="img">
+                <iframe id="iframeExample"
+                    title="Inline Frame Example"
+                    width="600"
+                    height="600"
+                    src="https://maps.ucsd.edu/map/default.htm">
+                </iframe>
+                <figure>
+                    <figcaption>Listen to the music:</figcaption>
+                    <audio
+                        controls
+                        src="/media/ucsd_fight_song.mp3">
+                    </audio>
+                </figure>
+            </section>
+
+            <section class="video">
+                <h3>UCSD Video</h2>
+                <video controls height="400" width="700">
+                    <source src="media/videoplayback.mp4" type="video/mp4" />
+                    <div class="error">Your browser does not support the video tag.</div>
+                </video>
+            </section>
+
+            <svg
+                viewBox="0 0 50 50"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="red"
+                fill="grey">
+                <circle cx="5" cy="5" r="4" />
+            </svg>
+
+            <section>
+                <pre>
+                    Y       Y     T T T T T T T
+                     Y     Y            T
+                      Y   Y             T
+                       Y Y              T
+                        Y               T
+                        Y               T
+                        Y               T
+                        Y               T
+                        Y               T
+                        Yu              Tong
+                </pre>
+            </section>
+
+            <label for="select">Choose a class you prefer:</label>
+            <select id="select">
+                <optgroup label="CSE">
+                    <option>CSE100</option>
+                    <option>CSE134</option>
+                    <option>CSE110</option>
+                </optgroup>
+
+                <form action="" method="get" class="form-example">
+                    <div class="form-example">
+                      <label for="name">Enter your name: </label>
+                      <input type="text" name="name" id="name" required>
+                    </div>
+                </form>
+
+                <form>
+                    <fieldset>
+                      <legend>Choose your favorite class</legend>
+                  
+                      <input type="class" id="100" name="CSE100" value="100">
+                      <label for="CSE100">CSE100</label><br>
+                  
+                      <input type="class" id="110" name="CSE110" value="110">
+                      <label for="CSE110">CSE110</label><br>
+                  
+                      <input type="class" id="134" name="CSE134" value="134" />
+                      <label for="CSE134">CSE134</label>
+                    </fieldset>
+                  </form>
+
+                <label for="UCSD">The class in UCSD:</label>
+                <textarea id="UCSD" name="UCSD" rows="4" cols="30">UCSD has CS class 100, 110, 120, 130...</textarea>
+
+
+                <label for="Favorite class">Choose a class:</label>
+                <input list="class-flavors" id="class-choice" name="class-choice">
+
+                <datalist id="class-flavors">
+                    <option value="CSE100">
+                    <option value="CSE101">
+                    <option value="CSE110">
+                    <option value="CSE134">
+                    <option value="CSE135">
+                </datalist>
+
+                <details>
+                    <summary>Details</summary>
+                    None
+                </details>
+
+                <template id="late button">
+                    <button class="favorite class" type="button">Add to class list</button>
+                </template>    
+                
+                <table>
+                    <caption>Computer Science</caption>
+                    <tr>
+                        <td>CSE100</td>
+                        <td>CSE101</td>
+                        <td>CSE110</td>
+                    </tr>
+                    <tr>
+                        <td>Data Structure</td>
+                        <td>algorithm</td>
+                        <td>SoftEngerning</td>
+                    </tr>
+                </table>
+                <table>
+                    <caption>Computer Science</caption>
+                    <colgroup>
+                        <col>
+                        <col major="CSE" class="100">
+                        <col major="CSE" class="110">
+                        <col major="CSE" class="101">
+                    </colgroup>
+                    <tr>
+                        <td>CSE100</td>
+                        <td>CSE101</td>
+                        <td>CSE110</td>
+                    </tr>
+                    <tr>
+                        <td>Data Structure</td>
+                        <td>algorithm</td>
+                        <td>SoftEngerning</td>
+                    </tr>
+                </table>
+            </select>
+        </main>
+
+
+
+        <footer>
+            <hr/>
+            <nav>
+                <a href="index.html">Back to Home Page</a>
+            </nav>
+            <p>This page was made by Yutong Wang</p>
+        </footer>
+
+    </body>
+</html>
