@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8" />
         <script src="dist/purify.js"></script>
-        <title> Part 1 </title>
-        
+        <title> Part 2 </title>
     </head>
 
     <body>
+        <div id="p1">Hello world</div>
+
         <button id="btn1">Alert</button>
         <button id="btn2">Confirm</button>
         <button id="btn3">Prompt</button>
@@ -23,9 +24,6 @@
 
                 let b3 = document.getElementById("btn3");
                 b3.addEventListener("click", myPrompt);
-
-                let b4 = document.getElementById("btn4");
-                b4.addEventListener("click", mySafer);
             }
 
             function myConfirm() {
@@ -47,6 +45,16 @@
                 else {
                     document.getElementById("out1").innerHTML = "User did not enter anything";
                 }
+            }
+
+            clickBtm();
+        </script>
+
+        <script>
+        
+            function clickBtm() {
+                let b4 = document.getElementById("btn4");
+                b4.addEventListener("click", mySafer);
             }
 
             function mySafer() {
