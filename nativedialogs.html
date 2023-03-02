@@ -19,11 +19,16 @@
             </div>
 
             <script>
-                document.getElementById("b1").addEventListener("click", myFunction);
-                
-                function myFunction() {
-                    document.getElementById("b1").alert("YOU CLICKED ME!");
+                // Function to change the content of t2
+                function alert() {
+                    let b1 = document.getElementById("b1");
+                    b1.alert("clicked");
                 }
+
+                // Add event listener to table
+                let el = document.getElementById("button");
+                el.addEventListener("click", alert, false);
+
             </script>
         </main>
     </body>
