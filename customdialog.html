@@ -1,6 +1,87 @@
-<!doctype html>
-<script type="module">
-  import {sayHi} from './say.js';
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title> Part 2 </title>
+        <script type="module">
+            //import {myAlert} from './customdialog.js';
+            const b1 = document.getElementById('btn1');
+            const b2 = document.getElementById('btn2');
+            const b3 = document.getElementById('btn3');
+            const y = document.getElementById('yes');
+            const n = document.getElementById('no');
+            const d1 = document.getElementById('dia1');
+            const d2 = document.getElementById('dia2');
+            const d3 = document.getElementById('dia3');
+            const n1 = document.getElementById('lname');
+            const finish = document.getElementById('finish');
+            const f1 = document.getElementById('dialog3');
 
-  document.body.innerHTML = sayHi('John');
-</script>
+            b1.addEventListener('click', () => {
+                d1.showModal();
+            });
+
+            b2.addEventListener('click', () => {
+                d2.showModal();
+            });
+
+            y.addEventListener('click', clickYes);
+            n.addEventListener('click', clickNo);
+
+            function clickYes(){
+                let o1 = document.getElementById("out1");
+                o1.innerHTML = "confirm result: true"
+            }
+
+            function clickNo(){
+                let o1 = document.getElementById("out1");
+                o1.innerHTML = "confirm result: false"
+            }
+
+            b3.addEventListener('click', () => {
+                d3.showModal();
+            });
+
+            n.addEventListener('click', clickFinish);
+
+            function clickFinish(){
+                let o1 = f1.n1.value;
+                o1.innerHTML = `Your name is: ${n1,innerHTML}`;
+            }
+        </script>
+        
+    </head>
+
+    <body>
+        <dialog id="dia1">
+            <form method="dialog1">
+                <p>You are starting to enter your name</p>
+                <button>OK</button>
+            </form>
+        </dialog>
+
+        <dialog id="dia2">
+            <form method="dialog2">
+                <p>Are you sure?</p>
+                <button id="yes">Yes</button>
+                <button id="no">No</button>
+            </form>
+        </dialog>
+
+        <dialog id="dia3">
+            <form method="dialog3">
+                <p>Please enter your name</p>
+                <input type="text" id="lname" name="lname" value=""><br>
+                <button id="finish">OK</button>
+            </form>
+        </dialog>
+
+        <button id="btn1">Alert</button>
+        <button id="btn2">Confirm</button>
+        <button id="btn3">Prompt</button>       
+
+        <br>
+
+        <output id="out1"></output>
+    </body>
+</html>
