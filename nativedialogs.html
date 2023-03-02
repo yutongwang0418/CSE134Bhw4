@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <script src="dist/purify.js"></script>
         <title> Part 1 </title>
     </head>
 
@@ -16,7 +17,7 @@
         <script>
             function clickBtm() {
                 let b1 = document.getElementById("btn1");
-                b1.addEventListener("click", myAlert);
+                b1.addEventListener("click", () => alert("You are starting to enter your name"));
 
                 let b2 = document.getElementById("btn2");
                 b2.addEventListener("click", myConfirm);
@@ -25,56 +26,49 @@
                 b3.addEventListener("click", myPrompt);
             }
 
-            function myAlert() {
-                alert("This is Alert");
-            }
-
             function myConfirm() {
                 if (confirm("Are you sure?") ) {
-                    alert("1");
                     let o1 = document.getElementById("out1");
-                    o1.innerHTML = "11111"
+                    o1.innerHTML = "confirm result: true"
                 }
                 else {
-                    alert("2");
                     let o1 = document.getElementById("out1");
-                    o1.innerHTML = "22222"
+                    o1.innerHTML = "confirm result: false"
                 }
             }
 
             function myPrompt() {
-                let p1 = prompt("1111", "default");
+                let p1 = prompt("Please enter your name", "John Wang");
                 if (p1 != null) {
-                    document.getElementById("out1").innerHTML = "cccddd" + p1 + "bbbaaa";
+                    document.getElementById("out1").innerHTML = "Your name is: " + p1;
                 }
                 else {
-                    document.getElementById("out1").innerHTML = "hhhhhhhhhh";
+                    document.getElementById("out1").innerHTML = "User did not enter anything";
                 }
             }
 
             clickBtm();
         </script>
 
-        <!-- <script> -->
-        <script src="DOMPurify-main/dist/purify.js">
+        <script>
+        
             function clickBtm() {
                 let b4 = document.getElementById("btn4");
                 b4.addEventListener("click", mySafer);
             }
 
             function mySafer() {
-                let p2 = prompt("1111", "default");
-                let clean2 = DOMPurify.sanitize(p2);
-                if (clean2 != null) {
-                    document.getElementById("out1").innerHTML = `cccddd ${clean2} bbbaaa`;
+                const p2 = prompt("Please enter your name", "John Wang");
+                if (p2 == null) {
+                    document.getElementById("out1").innerHTML = "User did not enter anything";
                 }
                 else {
-                    document.getElementById("out1").innerHTML = "hhhhhhhhhh";
+                    let clean2 = DOMPurify.sanitize(p2);
+                    document.getElementById("out1").innerHTML = `Your name is: ${clean2}`;
                 }
             }
 
             clickBtm();
-
         </script>
 
         <br>
