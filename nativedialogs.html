@@ -15,8 +15,16 @@
                 <input id="todo-input" type="text" />
             </div>
             <div class="button">
-                <button onclick="addItem()" class="example1">Add</button>
+                <button id="b1">Add</button>
             </div>
+
+            <script>
+                document.getElementById("b1").addEventListener("click", myFunction);
+                
+                function myFunction() {
+                    document.getElementById("b1").alert("YOU CLICKED ME!");
+                }
+            </script>
         </main>
     </body>
 </html>
