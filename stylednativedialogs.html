@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <script src="dist/purify.js"></script>
+        <title> Part 1 </title>
+        
+    </head>
+
+    <body style="padding: 20px; grid-column: 1/2; background-color: rgb(235, 235, 141);">
+        <button id="btn1" style="border: 1px solid; padding: 0.3rem; text-align: center; text-decoration: none; background-color: gray;">Alert</button>
+        <button id="btn2" style="border: 1px solid; padding: 0.3rem; text-align: center; text-decoration: none; background-color: green;">Confirm</button>
+        <button id="btn3" style="border: 1px solid; padding: 0.3rem; text-align: center; text-decoration: none; background-color: blue;">Prompt</button>
+        <button id="btn4" style="border: 1px solid; padding: 0.3rem; text-align: center; text-decoration: none; background-color: aqua;">Safer Prompt</button>
+
+        <script>
+            function clickBtm() {
+                let b1 = document.getElementById("btn1");
+                b1.addEventListener("click", () => alert("You are starting to enter your name"));
+
+                let b2 = document.getElementById("btn2");
+                b2.addEventListener("click", myConfirm);
+
+                let b3 = document.getElementById("btn3");
+                b3.addEventListener("click", myPrompt);
+
+                let b4 = document.getElementById("btn4");
+                b4.addEventListener("click", mySafer);
+            }
+
+            function myConfirm() {
+                if (confirm("Are you sure?") ) {
+                    let o1 = document.getElementById("out1");
+                    o1.innerHTML = "confirm result: true"
+                }
+                else {
+                    let o1 = document.getElementById("out1");
+                    o1.innerHTML = "confirm result: false"
+                }
+            }
+
+            function myPrompt() {
+                let p1 = prompt("Please enter your name", "John Wang");
+                if (p1 != null) {
+                    document.getElementById("out1").innerHTML = "Your name is: " + p1;
+                }
+                else {
+                    document.getElementById("out1").innerHTML = "User did not enter anything";
+                }
+            }
+
+            function mySafer() {
+                const p2 = prompt("Please enter your name", "John Wang");
+                if (p2 == null) {
+                    document.getElementById("out1").innerHTML = "User did not enter anything";
+                }
+                else {
+                    let clean2 = DOMPurify.sanitize(p2);
+                    document.getElementById("out1").innerHTML = `Your name is: ${clean2}`;
+                }
+            }
+
+            clickBtm();
+        </script>
+
+        <br>
+        <br>
+
+        <output id="out1" style="border: 1px solid; text-align: center; text-decoration: none; background-color: yellow;"></output>
+    </body>
+</html>
