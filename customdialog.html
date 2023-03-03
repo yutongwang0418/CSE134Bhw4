@@ -2,7 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <script src="dist/purify.js"></script>
+        <script src="dist/purify.js">
+            import {clickYes} from './customdialog.js';
+            import {clickNo} from './customdialog.js';
+            import {clickFinish} from './customdialog.js';
+        </script>
         <title> Part 2 </title>        
     </head>
 
@@ -41,9 +45,7 @@
 
 
         <script>
-            import {clickYes} from './customdialog.js';
-            import {clickNo} from './customdialog.js';
-            import {clickFinish} from './customdialog.js';
+            
             const b1 = document.getElementById('btn1');
             const b2 = document.getElementById('btn2');
             const b3 = document.getElementById('btn3');
