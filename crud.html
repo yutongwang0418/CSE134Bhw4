@@ -31,7 +31,6 @@
         </dialog>
 
         <script>
-            listItems();
             let items = JSON.parse(localStorage.getItem("post_list")) || [];
 
             const b1 = document.getElementById('btn1');
@@ -45,6 +44,10 @@
 
             b2.addEventListener('click', () => {
                 deleteItem(0);
+            });
+
+            d1.addEventListener('close', ()=> {
+                listItems();
             });
 
             function addItem() {
@@ -67,8 +70,6 @@
 
                 inputBox1.value = "";
                 inputBox2.value = "";
-
-                listItems();
             }
 
             function deleteItem(index) {
