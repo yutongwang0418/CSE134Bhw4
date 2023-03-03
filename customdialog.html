@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title> Part 2 </title>
         <script type="module">
-            import {clickYes} from './customdialog.js';
+            // import {clickYes} from './customdialog.js';
             const b1 = document.getElementById('btn1');
             const b2 = document.getElementById('btn2');
             const b3 = document.getElementById('btn3');
@@ -27,27 +27,23 @@
             y.addEventListener('click', clickYes);
             n.addEventListener('click', clickNo);
 
-            // function clickYes(){
-            //     let o1 = document.getElementById("out1");
-            //     o1.value = "confirm result: true"
-            // }
-
-            function clickNo(){
-                let o1 = document.getElementById("out1");
-                o1.value = "confirm result: false"
+            function clickYes(){
+                document.getElementById("out1").innerHTML = "confirm result: true";
             }
 
-            // b3.addEventListener('click', () => {
-            //     d3.showModal();
-            // });
+            function clickNo(){
+                document.getElementById("out1").innerHTML = "confirm result: false"
+            }
 
-            // n1.addEventListener('click', clickFinish);
+            b3.addEventListener('click', () => {
+                d3.showModal();
+            });
 
-            // function clickFinish(){
-            //     alert("jhhhhhhhh");
-            //     // let o1 = document.getElementById("out1");
-            //     // o1.innerHTML = `Your name is: ${n1,innerHTML}`;
-            // }
+            n1.addEventListener('click', clickFinish);
+
+            function clickFinish(){
+                document.getElementById("out1").innerHTML = `Your name is: ${n1.innerHTML}`;
+            }
         </script>
         
     </head>
