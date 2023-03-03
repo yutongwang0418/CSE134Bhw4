@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head style="text-align: center; background-color: rgb(0, 217, 255); ">
         <meta charset="utf-8" />
         <title> Part 4 </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body>
+    <body style="padding: 20px; grid-column: 1/2; background-color: #aeea18;" >
         
         <p>Blog post</p>
         
-        <div id="new"></div>
+        <div id="new" style="border: 1px solid; padding: 0.3rem; text-align: center; text-decoration: none; background-color: aqua;"></div>
 
-        <button id="btn1">Add blog</button>
-        <button id="btn2">Delete blog</button>
+        <button id="btn1" style="color:rgb(255, 0, 0);"><i class="fa fa-heart"></i> Add blog <i class="fa fa-cloud"></i></button>
+        
+        
+        <button id="btn2" style="color:rgb(255, 0, 51);"><i class="fa fa-file"></i> Delete blog <i class="fa fa-bars"></i></button>
+        
+        
         
 
-        <dialog id="dia1">
+        <dialog id="dia1" style="background-color: green; color: yellow; border: 1px solid; padding: 0.3rem; text-align: center; text-decoration: none;">
             <form method="dialog">
-                <p>Post Title</p>
+                <p styles="font-family: serif;">Post Title</p>
                 <input id="inp1"></input>
-                <p>Post Summary</p>
+                <p styles="font-family: serif;">Post Summary</p>
                 <input id="inp2"></input>
                 
                 <div>
