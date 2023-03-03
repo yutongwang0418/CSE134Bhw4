@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title> Part 2 </title>
         <script type="module">
-            //import {myAlert} from './customdialog.js';
+            import {clickYes} from './customdialog.js';
             const b1 = document.getElementById('btn1');
             const b2 = document.getElementById('btn2');
             const b3 = document.getElementById('btn3');
@@ -13,9 +13,8 @@
             const d1 = document.getElementById('dia1');
             const d2 = document.getElementById('dia2');
             const d3 = document.getElementById('dia3');
-            const n1 = document.getElementById('lname');
-            const finish = document.getElementById('finish');
-            const f1 = document.getElementById('dialog3');
+            const n1 = document.getElementById('name1');
+            const fb = document.getElementById('finish');
 
             b1.addEventListener('click', () => {
                 d1.showModal();
@@ -28,26 +27,27 @@
             y.addEventListener('click', clickYes);
             n.addEventListener('click', clickNo);
 
-            function clickYes(){
-                let o1 = document.getElementById("out1");
-                o1.innerHTML = "confirm result: true"
-            }
+            // function clickYes(){
+            //     let o1 = document.getElementById("out1");
+            //     o1.value = "confirm result: true"
+            // }
 
             function clickNo(){
                 let o1 = document.getElementById("out1");
-                o1.innerHTML = "confirm result: false"
+                o1.value = "confirm result: false"
             }
 
-            b3.addEventListener('click', () => {
-                d3.showModal();
-            });
+            // b3.addEventListener('click', () => {
+            //     d3.showModal();
+            // });
 
-            n.addEventListener('click', clickFinish);
+            // n1.addEventListener('click', clickFinish);
 
-            function clickFinish(){
-                let o1 = f1.n1.value;
-                o1.innerHTML = `Your name is: ${n1,innerHTML}`;
-            }
+            // function clickFinish(){
+            //     alert("jhhhhhhhh");
+            //     // let o1 = document.getElementById("out1");
+            //     // o1.innerHTML = `Your name is: ${n1,innerHTML}`;
+            // }
         </script>
         
     </head>
@@ -71,7 +71,7 @@
         <dialog id="dia3">
             <form method="dialog3">
                 <p>Please enter your name</p>
-                <input type="text" id="lname" name="lname" value=""><br>
+                <input type="text" id="name1" value=""><br>
                 <button id="finish">OK</button>
             </form>
         </dialog>
