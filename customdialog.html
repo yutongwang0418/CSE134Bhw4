@@ -63,8 +63,8 @@
                 d2.showModal();
             });
 
-            y.addEventListener('click', clickYes);
-            n.addEventListener('click', clickNo);
+            y.addEventListener('click', clickYes());
+            n.addEventListener('click', clickNo());
 
             // function clickYes(){
             //     document.getElementById("out1").innerHTML = "confirm result: true";
@@ -78,7 +78,7 @@
                 d3.showModal();
             });
 
-            fb.addEventListener('click', clickFinish);
+            fb.addEventListener('click', clickFinish());
 
             // function clickFinish(){
             //     let inputBox1 = document.querySelector("#inp1");
