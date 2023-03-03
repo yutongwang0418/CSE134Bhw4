@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <script src="dist/purify.js">
-            import {clickYes} from './customdialog.js';
-            import {clickNo} from './customdialog.js';
-            import {clickFinish} from './customdialog.js';
+            // import {clickYes} from './customdialog.js';
+            // import {clickNo} from './customdialog.js';
+            // import {clickFinish} from './customdialog.js';
         </script>
         <title> Part 2 </title>        
     </head>
@@ -65,35 +65,35 @@
                 d2.showModal();
             });
 
-            y.addEventListener('click', clickYes());
-            n.addEventListener('click', clickNo());
+            y.addEventListener('click', clickYes);
+            n.addEventListener('click', clickNo);
 
-            // function clickYes(){
-            //     document.getElementById("out1").innerHTML = "confirm result: true";
-            // }
+            function clickYes(){
+                document.getElementById("out1").innerHTML = "confirm result: true";
+            }
 
-            // function clickNo(){
-            //     document.getElementById("out1").innerHTML = "confirm result: false"
-            // }
+            function clickNo(){
+                document.getElementById("out1").innerHTML = "confirm result: false"
+            }
 
             b3.addEventListener('click', () => {
                 d3.showModal();
             });
 
-            fb.addEventListener('click', clickFinish());
+            fb.addEventListener('click', clickFinish);
 
-            // function clickFinish(){
-            //     let inputBox1 = document.querySelector("#inp1");
-            //     let item1 = inputBox1.value;
-            //     // document.getElementById("out1").innerHTML = `Your name is: ${item1}`;
-            //     if(item1 === "") {
-            //         document.getElementById("out1").innerHTML = "User did not enter anything";
-            //     }
-            //     else {
-            //         let clean1 = DOMPurify.sanitize(item1);
-            //         document.getElementById("out1").innerHTML = `Your name is: ${clean1}`;
-            //     }
-            // }
+            function clickFinish(){
+                let inputBox1 = document.querySelector("#inp1");
+                let item1 = inputBox1.value;
+                // document.getElementById("out1").innerHTML = `Your name is: ${item1}`;
+                if(item1 === "") {
+                    document.getElementById("out1").innerHTML = "User did not enter anything";
+                }
+                else {
+                    let clean1 = DOMPurify.sanitize(item1);
+                    document.getElementById("out1").innerHTML = `Your name is: ${clean1}`;
+                }
+            }
         </script>
     </body>
 </html>
