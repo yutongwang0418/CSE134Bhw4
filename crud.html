@@ -7,11 +7,9 @@
 
     <body>
         
+        <p>Blog post</p>
         
-        
-        <div id="new">
-            <p>Blog post</p>
-        </div>
+        <div id="new"></div>
 
         <button id="btn1">Add blog</button>
         <button id="btn2">Delete blog</button>
@@ -25,8 +23,8 @@
                 <input id="inp2"></input>
                 
                 <div>
-                    <button>Cancel</button>
-                    <button>Save</button>
+                    <button id="btn3">Cancel</button>
+                    <button id="btn4">Save</button>
                 </div>
                 
             </form>
@@ -34,7 +32,6 @@
 
         <script>
             listItems();
-
             let items = JSON.parse(localStorage.getItem("post_list")) || [];
 
             const b1 = document.getElementById('btn1');
@@ -56,7 +53,6 @@
                 let inputBox2 = document.querySelector("#inp2");
                 let item2 = inputBox2.value;
 
-
                 if(item1 === "" || item2 === "") {
                     return alert("Please enter data");
                 }
@@ -69,10 +65,10 @@
 
                 localStorage.setItem("post_list", JSON.stringify(items));
 
-                listItems();
-
                 inputBox1.value = "";
                 inputBox2.value = "";
+
+                listItems();
             }
 
             function deleteItem(index) {
@@ -82,6 +78,11 @@
             }
 
             function listItems() {
+                let element = document.getElementById("new");
+                element.innerHTML="";
+
+
+
                 let items = JSON.parse(localStorage.getItem("post_list"))
                 let intNum = items.length
                 for(let i=0; i<intNum; i++) {
