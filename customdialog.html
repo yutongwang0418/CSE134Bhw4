@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <script src="dist/purify.js"></script>
         <title> Part 2 </title>        
     </head>
 
@@ -24,7 +25,7 @@
         <dialog id="dia3">
             <form method="dialog">
                 <p>Please enter your name</p>
-                <input type="text" id="name1" value=""><br>
+                <input id="inp1"></input>
                 <button id="finish">OK</button>
             </form>
         </dialog>
@@ -40,7 +41,9 @@
 
 
         <script>
-            // import {clickYes} from './customdialog.js';
+            import {clickYes} from './customdialog.js';
+            import {clickNo} from './customdialog.js';
+            import {clickFinish} from './customdialog.js';
             const b1 = document.getElementById('btn1');
             const b2 = document.getElementById('btn2');
             const b3 = document.getElementById('btn3');
@@ -49,7 +52,7 @@
             const d1 = document.getElementById('dia1');
             const d2 = document.getElementById('dia2');
             const d3 = document.getElementById('dia3');
-            const n1 = document.getElementById('name1');
+            const in1 = document.getElementById('inp1');
             const fb = document.getElementById('finish');
 
             b1.addEventListener('click', () => {
@@ -63,23 +66,32 @@
             y.addEventListener('click', clickYes);
             n.addEventListener('click', clickNo);
 
-            function clickYes(){
-                document.getElementById("out1").innerHTML = "confirm result: true";
-            }
+            // function clickYes(){
+            //     document.getElementById("out1").innerHTML = "confirm result: true";
+            // }
 
-            function clickNo(){
-                document.getElementById("out1").innerHTML = "confirm result: false"
-            }
+            // function clickNo(){
+            //     document.getElementById("out1").innerHTML = "confirm result: false"
+            // }
 
             b3.addEventListener('click', () => {
                 d3.showModal();
             });
 
-            n1.addEventListener('click', clickFinish);
+            fb.addEventListener('click', clickFinish);
 
-            function clickFinish(){
-                document.getElementById("out1").innerHTML = `Your name is: ${n1.innerHTML}`;
-            }
+            // function clickFinish(){
+            //     let inputBox1 = document.querySelector("#inp1");
+            //     let item1 = inputBox1.value;
+            //     // document.getElementById("out1").innerHTML = `Your name is: ${item1}`;
+            //     if(item1 === "") {
+            //         document.getElementById("out1").innerHTML = "User did not enter anything";
+            //     }
+            //     else {
+            //         let clean1 = DOMPurify.sanitize(item1);
+            //         document.getElementById("out1").innerHTML = `Your name is: ${clean1}`;
+            //     }
+            // }
         </script>
     </body>
 </html>
