@@ -2,8 +2,44 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title> Part 2 </title>
-        <script type="module">
+        <title> Part 2 </title>        
+    </head>
+
+    <body>
+        <dialog id="dia1">
+            <form method="dialog">
+                <p>You are starting to enter your name</p>
+                <button>OK</button>
+            </form>
+        </dialog>
+
+        <dialog id="dia2">
+            <form method="dialog">
+                <p>Are you sure?</p>
+                <button id="yes">Yes</button>
+                <button id="no">No</button>
+            </form>
+        </dialog>
+
+        <dialog id="dia3">
+            <form method="dialog">
+                <p>Please enter your name</p>
+                <input type="text" id="name1" value=""><br>
+                <button id="finish">OK</button>
+            </form>
+        </dialog>
+
+        <button id="btn1">Alert</button>
+        <button id="btn2">Confirm</button>
+        <button id="btn3">Prompt</button>       
+
+        <br>
+
+        <output id="out1"></output>
+
+
+
+        <script>
             // import {clickYes} from './customdialog.js';
             const b1 = document.getElementById('btn1');
             const b2 = document.getElementById('btn2');
@@ -45,39 +81,5 @@
                 document.getElementById("out1").innerHTML = `Your name is: ${n1.innerHTML}`;
             }
         </script>
-        
-    </head>
-
-    <body>
-        <dialog id="dia1">
-            <form method="dialog1">
-                <p>You are starting to enter your name</p>
-                <button>OK</button>
-            </form>
-        </dialog>
-
-        <dialog id="dia2">
-            <form method="dialog2">
-                <p>Are you sure?</p>
-                <button id="yes">Yes</button>
-                <button id="no">No</button>
-            </form>
-        </dialog>
-
-        <dialog id="dia3">
-            <form method="dialog3">
-                <p>Please enter your name</p>
-                <input type="text" id="name1" value=""><br>
-                <button id="finish">OK</button>
-            </form>
-        </dialog>
-
-        <button id="btn1">Alert</button>
-        <button id="btn2">Confirm</button>
-        <button id="btn3">Prompt</button>       
-
-        <br>
-
-        <output id="out1"></output>
     </body>
 </html>
