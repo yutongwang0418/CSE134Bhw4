@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title> Part 4 </title>
+    </head>
+
+    <body>
+        
+        <p>Blog post</p>
+        
+        <div id="new"></div>
+
+        <button id="btn1">Add blog</button>
+        <button id="btn2">Delete blog</button>
+        
+
+        <dialog id="dia1">
+            <form method="dialog">
+                <p>Post Title</p>
+                <input id="inp1"></input>
+                <p>Post Summary</p>
+                <input id="inp2"></input>
+                
+                <div>
+                    <button id="btn3">Save</button>
+                    <button id="btn4">Cancel</button>
+                </div>
+                
+            </form>
+        </dialog>
+
+        <script>
+            let items = JSON.parse(localStorage.getItem("post_list")) || [];
+
+            listItems();
+
+            const b1 = document.getElementById('btn1');
+            const b2 = document.getElementById('btn2');
+            const b3 = document.getElementById('btn3');
+            const d1 = document.getElementById('dia1');
+
+            b1.addEventListener('click', () => {
+                d1.showModal();
+            });
+
+            b3.addEventListener('click', () => {
+                addItem();
+            });
+
+            b2.addEventListener('click', () => {
+                deleteItem(0);
+            });
+
+            d1.addEventListener('close', ()=> {
+                listItems();
+            });
+
+            function addItem() {
+                let inputBox1 = document.querySelector("#inp1");
+                let item1 = inputBox1.value;
+                let inputBox2 = document.querySelector("#inp2");
+                let item2 = inputBox2.value;
+;
+                if(item1 === "" || item2 === "") {
+                    return alert("Please enter data");
+                }
+
+                items.push({
+                    value1: item1,
+                    time: new Date().toLocaleDateString("en-US"),
+                    value2: item2,
+                });
+
+                localStorage.setItem("post_list", JSON.stringify(items));
+
+                inputBox1.value = "";
+                inputBox2.value = "";
+            }
+
+            function deleteItem(index) {
+                items.splice(index, 1);
+                localStorage.setItem("post_list", JSON.stringify(items));
+                listItems();
+            }
+
+            function listItems() {
+                let element = document.getElementById("new");
+                element.innerHTML="";
+
+
+
+                let items = JSON.parse(localStorage.getItem("post_list"))
+                let intNum = items.length
+                for(let i=0; i<intNum; i++) {
+                    let item = items[i];
+
+                    let tag = document.createElement("p");
+                    let text = document.createTextNode("Post title: "+items[i].value1+" Post time: "+items[i].time+" Post summary: "+items[i].value2);
+                    tag.appendChild(text);
+                    let element = document.getElementById("new");
+                    element.appendChild(tag);
+                }
+            }
+        </script>
+
+
+
+
+    </body>
+</html>
