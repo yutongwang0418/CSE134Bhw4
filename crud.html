@@ -91,7 +91,10 @@
 
 
                 let items = JSON.parse(localStorage.getItem("post_list"))
-                let intNum = items.length
+                let intNum = 0;
+                if(items != null) {
+                    intNum = items.length;
+                }
                 for(let i=0; i<intNum; i++) {
                     let item = items[i];
 
